@@ -1,0 +1,29 @@
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
+
+interface PageWrapperProps {
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+  actions?: ReactNode;
+}
+
+const PageWrapper = ({ title, subtitle, children, actions }: PageWrapperProps) => (
+  <motion.div
+    initial={{ opacity: 0, y: 12 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.35 }}
+    className="flex-1 overflow-y-auto p-4 lg:p-8"
+  >
+    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+      <div>
+        <h1 className="text-2xl font-bold text-foreground">{title}</h1>
+        {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
+      </div>
+      {actions && <div className="flex gap-2">{actions}</div>}
+    </div>
+    {children}
+  </motion.div>
+);
+
+export default PageWrapper;
