@@ -22,3 +22,38 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# -------------------------------------------------
+# gitignore for Flask app
+# -------------------------------------------------
+
+# Byte-code files
+*.pyc
+__pycache__/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Editors and OS
+.DS_Store
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Python specific
+build/
+dist/
+*.egg-info/
+.coverage
+.mypy_cache/
+.pytest_cache/
+
